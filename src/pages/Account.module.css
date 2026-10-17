@@ -1,0 +1,138 @@
+
+.title {
+  font-size: clamp(3rem, 8vw, 6rem);
+  margin-bottom: var(--space-6);
+}
+
+.back {
+  margin-bottom: var(--space-3);
+  font-weight: 700;
+}
+
+.back a {
+  border-bottom: 3px solid var(--color-hot);
+}
+
+.back a:hover {
+  color: var(--color-accent);
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-5);
+  align-items: stretch;
+}
+
+.card {
+  display: grid;
+  gap: var(--space-3);
+  align-content: start;
+  min-width: 0;
+  padding: var(--space-5);
+  background: #fff;
+  border: 2px solid var(--color-ink);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  animation: rise 0.5s var(--ease) backwards;
+  transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+  overflow-wrap: anywhere;
+}
+
+.card:nth-child(1) {
+  background: var(--color-butter);
+}
+
+.card:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: var(--shadow-md);
+}
+
+.card h2 {
+  font-size: 2rem;
+  margin: 0;
+}
+
+.card p {
+  margin: 0;
+  line-height: 1.65;
+}
+
+.card .btn {
+  justify-self: start;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  margin-top: var(--space-6);
+}
+
+.orders {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: var(--space-3);
+}
+
+.order {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr 1fr auto;
+  align-items: center;
+  gap: var(--space-4);
+  padding: var(--space-4) var(--space-5);
+  background: #fff;
+  border: 2px solid var(--color-ink);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+}
+
+.order:hover {
+  background: var(--color-butter);
+  transform: translate(-3px, -3px);
+  box-shadow: var(--shadow-md);
+}
+
+.num {
+  font-weight: 800;
+  word-break: break-all;
+}
+
+.muted {
+  color: var(--color-muted);
+}
+
+.paid,
+.unpaid {
+  justify-self: start;
+  padding: 0.2rem 0.75rem;
+  border: 2px solid var(--color-ink);
+  border-radius: 999px;
+  font-size: 0.82rem;
+  font-weight: 800;
+}
+
+.paid {
+  background: #b9f0d3;
+}
+
+.unpaid {
+  background: var(--color-warn-soft);
+}
+
+@media (max-width: 720px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .order {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .card {
+    padding: var(--space-4);
+  }
+}

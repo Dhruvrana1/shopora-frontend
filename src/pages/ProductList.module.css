@@ -1,0 +1,20 @@
+.band { position: relative; overflow: hidden; background: var(--color-ink); color: #fff; border-bottom: 2px solid var(--color-ink); }
+.band::after { content: ''; position: absolute; right: -60px; top: -90px; width: 300px; height: 300px; border-radius: 50%; background: var(--color-hot); animation: float 8s ease-in-out infinite alternate; }
+@keyframes float { to { transform: translate(-24px, 24px); } }
+.bandInner { position: relative; z-index: 1; padding-block: var(--space-7); animation: rise 0.6s var(--ease); }
+.title { font-size: clamp(3rem, 10vw, 8rem); line-height: 0.88; color: var(--color-butter); overflow-wrap: anywhere; }
+.count { margin-top: var(--space-3); font-weight: 700; color: #cfd0e6; }
+.toolbar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--space-4); margin-bottom: var(--space-6); }
+.chips { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: var(--space-2); }
+.chip, .chipOn { display: inline-block; padding: 0.45rem 1.05rem; border: 2px solid var(--color-ink); border-radius: 999px; background: #fff; font-weight: 700; font-size: 0.9rem; white-space: nowrap; transition: background 0.2s, color 0.2s, transform 0.15s, box-shadow 0.15s; }
+.chip:hover { background: var(--color-butter); transform: translate(-2px, -2px); box-shadow: var(--shadow-sm); }
+.chipOn { background: var(--color-accent); color: #fff; }
+.sort { min-width: 220px; }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: var(--space-5); }
+.more { display: flex; justify-content: center; margin-top: var(--space-7); }
+@media (max-width: 640px) {
+  .chips { flex-wrap: nowrap; overflow-x: auto; width: 100%; padding: 4px 4px var(--space-2); scrollbar-width: none; }
+  .chips::-webkit-scrollbar { display: none; }
+  .sort { width: 100%; }
+  .grid { grid-template-columns: repeat(2, 1fr); gap: var(--space-3); }
+}

@@ -1,0 +1,20 @@
+.shell { min-height: 100vh; display: flex; flex-direction: column; overflow-x: clip; }
+.main { flex: 1; }
+.page { animation: pageIn 0.5s var(--ease); }
+@keyframes pageIn { from { opacity: 0; transform: translateY(14px); } }
+.skip { position: absolute; left: var(--space-4); top: -70px; background: var(--color-ink); color: #fff; padding: var(--space-2) var(--space-4); border-radius: var(--radius-sm); z-index: 200; }
+.skip:focus { top: var(--space-3); }
+
+.toast {
+  position: fixed; right: var(--space-5); bottom: var(--space-5); z-index: 120;
+  display: flex; align-items: center; gap: var(--space-3);
+  padding: 0.8rem 1rem; background: var(--color-butter); border: 2px solid var(--color-ink); border-radius: 999px;
+  box-shadow: var(--shadow-md); font-weight: 700;
+  visibility: hidden; opacity: 0; transform: translateY(24px) scale(0.96);
+  transition: opacity 0.3s ease, transform 0.4s var(--ease), visibility 0s 0.4s;
+}
+.toastOn { visibility: visible; opacity: 1; transform: none; transition-delay: 0s; }
+.tick { display: grid; place-items: center; width: 26px; height: 26px; border-radius: 50%; background: var(--color-success); color: #fff; font-size: 0.85rem; }
+.toastLink { margin-left: var(--space-2); padding: 0.3rem 0.8rem; border-radius: 999px; background: var(--color-ink); color: #fff; font-size: 0.85rem; transition: background 0.2s; }
+.toastLink:hover { background: var(--color-accent); }
+@media (max-width: 520px) { .toast { left: var(--space-3); right: var(--space-3); bottom: var(--space-3); justify-content: space-between; } }

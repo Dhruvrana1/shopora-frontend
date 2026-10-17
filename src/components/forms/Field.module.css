@@ -1,0 +1,2 @@
+.hint { font-size: 0.8rem; color: var(--color-muted); }
+.err { font-size: 0.85rem; color: var(--color-danger); }
