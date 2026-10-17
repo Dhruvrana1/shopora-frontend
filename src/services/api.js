@@ -1,7 +1,7 @@
 
 import { ENDPOINTS } from './endpoints';
 
-const BASE_URL = (import.meta.env.VITE_API_BASE_URL || '').replace(/\/$/, '');
+const BASE_URL = `${(import.meta.env.VITE_API_BASE_URL || '').replace(/\/$/, '')}/api`;
 const TOKEN_KEY = 'shopora_token';
 const TIMEOUT_MS = 20000;
 
