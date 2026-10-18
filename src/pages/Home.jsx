@@ -19,6 +19,7 @@ export default function Home() {
   const { isAuthenticated } = useAuth();
   const railRef = useRef(null);
   const cats = useFetch((s) => categoryService.list(s), []);
+  console.log("Homepage categories:", cats);
   // No "featured" flag exists in the backend: the first products returned are shown.
   const products = useFetch((s) => productService.list({ limit: 12 }, s), []);
 
